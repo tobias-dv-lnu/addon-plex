@@ -1,4 +1,6 @@
-# Home Assistant Community Add-on: Plex Media Server
+# ~~Home Assistant Community Add-on~~ Dianlight: Plex Media Server
+
+Based on original **Home Assistant Community Add-on: Plex Media Server**
 
 [![GitHub Release][releases-shield]][releases]
 ![Project Stage][project-stage-shield]
@@ -10,16 +12,22 @@
 ![Supports armv7 Architecture][armv7-shield]
 ![Supports i386 Architecture][i386-shield]
 
+<!--
 [![GitLab CI][gitlabci-shield]][gitlabci]
+-->
 ![Project Maintenance][maintenance-shield]
 [![GitHub Activity][commits-shield]][commits]
 
 [![Discord][discord-shield]][discord]
+<!--
 [![Community Forum][forum-shield]][forum]
+-->
 
+<!--
 [![Sponsor Frenck via GitHub Sponsors][github-sponsors-shield]][github-sponsors]
 
 [![Support Frenck on Patreon][patreon-shield]][patreon]
+-->
 
 Your recorded media, live TV, online news, and podcasts, beautifully organized
 and ready to stream.
@@ -58,6 +66,10 @@ Example add-on configuration:
 log_level: info
 claim_code: claim-cAMrqFrenckFU4x445Tn
 webtools: true
+networkdisks:
+ - //serverip/share
+cifsusername: hassio
+cifspassword: password 
 ```
 
 **Note**: _This is just an example, don't copy and paste it! Create your own!_
@@ -182,10 +194,10 @@ Plex Media Server.
   useful, don't expect too much. In general, the Pi lacks the processing power
   and is probably not able to stream your media; therefore it is not
   recommended using this add-on on such a device.
-- This add-on cannot add/mount any additional USB or other devices for you.
+- ~~This add-on cannot add/mount any additional USB or other devices for you.
   This is a Hass.io limitation. In case you'd like to use extra devices,
   you'll have to modify the host system yourself and is not supported by the
-  Hass.io or Community add-ons team.
+  Hass.io or Community add-ons team.~~
 - A Plex Pass gives you exclusive access to new features, which are
   available through a Beta version channel of the media server. At this
   time, running this "Beta" version, is not supported by this add-on.
@@ -247,7 +259,7 @@ our [GitHub Repository][repository].
 
 MIT License
 
-Copyright (c) 2018-2020 Franck Nijhof
+Copyright (c) 2018-2020 Franck Nijhof, Lucio Tarantino
 
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
@@ -271,31 +283,35 @@ SOFTWARE.
 [amd64-shield]: https://img.shields.io/badge/amd64-yes-green.svg
 [armhf-shield]: https://img.shields.io/badge/armhf-no-red.svg
 [armv7-shield]: https://img.shields.io/badge/armv7-yes-green.svg
-[commits-shield]: https://img.shields.io/github/commit-activity/y/hassio-addons/addon-plex.svg
-[commits]: https://github.com/hassio-addons/addon-plex/commits/master
-[contributors]: https://github.com/hassio-addons/addon-plex/graphs/contributors
+[commits-shield]: https://img.shields.io/github/commit-activity/y/dialight/addon-plex.svg
+[commits]: https://github.com/dialight/addon-plex/commits/master
+[contributors]: https://github.com/dialight/addon-plex/graphs/contributors
 [discord-ha]: https://discord.gg/c5DvZ4e
 [discord-shield]: https://img.shields.io/discord/478094546522079232.svg
 [discord]: https://discord.me/hassioaddons
 [forum-shield]: https://img.shields.io/badge/community-forum-brightgreen.svg
+<!--
 [forum]: https://community.home-assistant.io/t/community-hass-io-add-on-plex-media-server/54383?u=frenck
 [frenck]: https://github.com/frenck
 [github-sponsors-shield]: https://frenck.dev/wp-content/uploads/2019/12/github_sponsor.png
 [github-sponsors]: https://github.com/sponsors/frenck
-[gitlabci-shield]: https://gitlab.com/hassio-addons/addon-plex/badges/master/pipeline.svg
-[gitlabci]: https://gitlab.com/hassio-addons/addon-plex/pipelines
+[gitlabci-shield]: https://gitlab.com/dialight/addon-plex/badges/master/pipeline.svg
+[gitlabci]: https://gitlab.com/dialight/addon-plex/pipelines
+-->
 [home-assistant]: https://home-assistant.io
 [i386-shield]: https://img.shields.io/badge/i386-yes-green.svg
-[issue]: https://github.com/hassio-addons/addon-plex/issues
+[issue]: https://github.com/dialight/addon-plex/issues
 [keepchangelog]: http://keepachangelog.com/en/1.0.0/
-[license-shield]: https://img.shields.io/github/license/hassio-addons/addon-plex.svg
+[license-shield]: https://img.shields.io/github/license/dialight/addon-plex.svg
 [maintenance-shield]: https://img.shields.io/maintenance/yes/2020.svg
+<!--
 [patreon-shield]: https://frenck.dev/wp-content/uploads/2019/12/patreon.png
 [patreon]: https://www.patreon.com/frenck
+-->
 [project-stage-shield]: https://img.shields.io/badge/project%20stage-production%20ready-brightgreen.svg
 [reddit]: https://reddit.com/r/homeassistant
-[releases-shield]: https://img.shields.io/github/release/hassio-addons/addon-plex.svg
-[releases]: https://github.com/hassio-addons/addon-plex/releases
-[repository]: https://github.com/hassio-addons/repository
+[releases-shield]: https://img.shields.io/github/release/dialight/addon-plex.svg
+[releases]: https://github.com/dialight/addon-plex/releases
+[repository]: https://github.com/dialight/repository
 [semver]: http://semver.org/spec/v2.0.0.htm
 [webtools]: https://github.com/ukdtom/WebTools.bundle/wiki
