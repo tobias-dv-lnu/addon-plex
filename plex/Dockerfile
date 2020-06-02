@@ -1,12 +1,14 @@
-ARG BUILD_FROM=hassioaddons/ubuntu-base:5.2.1
+ARG BUILD_FROM
+#=hassioaddons/ubuntu-base:5.2.1
 # hadolint ignore=DL3006
-FROM ${BUILD_FROM}
+FROM $BUILD_FROM
 
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
 
 # Setup base system
-ARG BUILD_ARCH=amd64
+ARG BUILD_ARCH
+#=amd64
 RUN \
     apt-get update \
     \
