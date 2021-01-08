@@ -1,7 +1,6 @@
-ARG BUILD_FROM
-#=hassioaddons/ubuntu-base:5.2.1
+ARG BUILD_FROM=hassioaddons/ubuntu-base:5.2.2
 # hadolint ignore=DL3006
-FROM $BUILD_FROM
+FROM ${BUILD_FROM}
 
 # Set shell
 SHELL ["/bin/bash", "-o", "pipefail", "-c"]
@@ -24,7 +23,7 @@ RUN \
     && if [ "${BUILD_ARCH}" = "i386" ]; then ARCH="x86"; fi \
     \
     && curl -J -L -o /tmp/plexmediaserver.tgz \
-        "https://downloads.plex.tv/plex-media-server-new/1.20.2.3402-0fec14d92/synology/PlexMediaServer-1.20.2.3402-0fec14d92-${ARCH}.spk" \
+        "https://downloads.plex.tv/plex-media-server-new/1.20.4.3517-ab5e1197c/synology/PlexMediaServer-1.20.4.3517-ab5e1197c-${ARCH}.spk" \
     \
     && mkdir /usr/lib/plexmediaserver \
     && tar -xOf /tmp/plexmediaserver.tgz package.tgz | tar -xzf - -C /usr/lib/plexmediaserver/ \
