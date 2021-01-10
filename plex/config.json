@@ -53,8 +53,8 @@
         "log_level": "list(trace|debug|info|notice|warning|error|fatal)?",
         "claim_code": "str",
         "webtools": "bool",
-        "networkdisks": ["str"],
-        "cifsusername": "str",
-        "cifspassword": "str"
+        "ftp_servers": ["str"],
+        "ftpusername": "str",
+        "ftppassword": "str"
     }
 }
