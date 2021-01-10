@@ -24,7 +24,7 @@ if bashio::config.has_value 'ftp_servers'; then
     for server in $MORESERVERS 
     do
         bashio::log.info "Mount ftp ${server}"
-        mkdir -p /$disk && \
+        mkdir -p /$server && \
             curlftpfs $FTP_USERNAME:$FTP_PASSWORD@$server /$server && \
             #mount -t cifs -o username=$FTP_USERNAME,password=$CIFS_PASSWORD $server /$server && \
             bashio::log.info "Success!"   
