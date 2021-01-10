@@ -4,7 +4,7 @@
     "slug": "plex",
     "description": "Recorded media, live TV, online news, and podcasts ready to stream.",
     "url": "https://github.com/tobias-dv-lnu/addon-plex",
-    "webui": "http://[HOST]:[PORT:32400]/web",
+    "webui": "https://[HOST]:[PORT:32400]/web",
     "startup": "services",
     "arch": ["aarch64", "amd64", "armv7", "i386"],
     "map": ["media:rw", "share:rw", "ssl"],
