@@ -16,17 +16,17 @@ apt-get update
 apt-get -y install curlftpfs
 
 # Mount ftp Share if configured and if Protection Mode is active
-if bashio::config.has_value 'networkdisks'; then
-    MOREDISKS=$(bashio::config 'networkdisks')
-    CIFS_USERNAME=$(bashio::config 'cifsusername')
-    CIFS_PASSWORD=$(bashio::config 'cifspassword')
-    bashio::log.info "Network ftp Disks mounting.. ${MOREDISKS}" && \
-    for disk in $MOREDISKS 
+if bashio::config.has_value 'ftp_servers'; then
+    MORESERVERS=$(bashio::config 'ftp_servers')
+    FTP_USERNAME=$(bashio::config 'ftpusername')
+    FTP_PASSWORD=$(bashio::config 'ftppassword')
+    bashio::log.info "Network ftp servers mounting.. ${MOREDISKS}" && \
+    for server in $MORESERVERS 
     do
-        bashio::log.info "Mount ftp ${disk}"
+        bashio::log.info "Mount ftp ${server}"
         mkdir -p /$disk && \
-            curlftpfs $CIFS_USERNAME:$CIFS_PASSWORD@$disk /$disk && \
-            #mount -t cifs -o username=$CIFS_USERNAME,password=$CIFS_PASSWORD $disk /$disk && \
+            curlftpfs $FTP_USERNAME:$FTP_PASSWORD@$server /$server && \
+            #mount -t cifs -o username=$FTP_USERNAME,password=$CIFS_PASSWORD $server /$server && \
             bashio::log.info "Success!"   
     done || \
     bashio::log.warning "Protection mode is ON. Unable to mount external drivers!"
