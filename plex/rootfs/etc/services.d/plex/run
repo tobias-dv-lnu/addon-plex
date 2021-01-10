@@ -20,7 +20,7 @@ if bashio::config.has_value 'ftp_servers'; then
     MORESERVERS=$(bashio::config 'ftp_servers')
     FTP_USERNAME=$(bashio::config 'ftpusername')
     FTP_PASSWORD=$(bashio::config 'ftppassword')
-    bashio::log.info "Network ftp servers mounting.. ${MOREDISKS}" && \
+    bashio::log.info "Network ftp servers mounting.. ${MORESERVERS}" && \
     for server in $MORESERVERS 
     do
         bashio::log.info "Mount ftp ${server}"
